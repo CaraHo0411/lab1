@@ -1,0 +1,28 @@
+<table>
+    <% items.forEach( function(item) { %>
+
+        <tr>
+            <td><%=item.product %></td>
+            <td><button tpe="button" onclick="buy('<%= item.id%>')">Place in shpping</button></td>
+        </tr>
+
+ <%  }) %>
+</table>
+
+<script>
+    async function buy(id){
+
+        var response = await fetch('/item/'+ id, {
+            method:'POST'
+        });
+
+        if(response.ok){
+
+            alert("added");
+
+        }else{
+            alert(response.status);
+        }
+
+    }
+</script>

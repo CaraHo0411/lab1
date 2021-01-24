@@ -1,0 +1,30 @@
+<form action="/enquiry" method="POST" onsubmit="return checkPasswords()"> 
+    <label>Username:</label>
+    <input name='username'></br>
+
+    <label>Age:</label>
+    <input name='age'></br>
+
+    <label>Password:</label>
+    <input name='pw1' id="pw1"></br>
+
+    <label>Password again:</label>
+    <input name='pw2' id="pw2"></br>
+
+    <button type='submit'>Submit</button>
+</form>
+<script>
+    function checkPasswords(){
+        var pw1=document.getElementById("pw1").value;
+        var pw2=document.getElementById("pw1").value;
+
+        if(pw1==pw2){
+            return true
+
+        }else{
+            alert("Do not match.")
+            return false
+        }
+
+    }
+</script>
